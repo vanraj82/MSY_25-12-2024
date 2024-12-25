@@ -102,3 +102,4 @@ C:\MSY\MSY\MSY\obj\Debug\MSY.csproj.CoreCompileInputs.cache
 C:\MSY\MSY\MSY\obj\Debug\MSY.csproj.CopyComplete
 C:\MSY\MSY\MSY\obj\Debug\MSY.dll
 C:\MSY\MSY\MSY\obj\Debug\MSY.pdb
+C:\MSY\MSY\MSY\obj\Debug\MSY.csprojAssemblyReference.cache
