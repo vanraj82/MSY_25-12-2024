@@ -2,21 +2,39 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="banner">
+    <div class="slides">
+        <div class="slide"><img src="~/Storage/images/2.jpg" alt="Slide 1" /></div>
+        <div class="slide"><img src="~/Storage/images/3.jpg" alt="Slide 2" /></div>
+    </div>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="flex-container">
+        <div>
+            <p>151755</p>
+            <p>
+                Applications<br />Received
+            </p>
+        </div>
+        <div>
+            <p>112263</p>
+            <p>
+                Job Cards<br />Issued
+            </p>
+        </div>
+        <div>
+            <p>3491</p>
+            <p>
+                Approved Work<br />Schemes
+            </p>
+        </div>
+        <div>
+            <p>3251225</p>
+            <p>
+                Mandays<br />Allotted
+            </p>
+        </div>
     </div>
     <div class="col-md-4">
         <h2>Get more libraries</h2>
@@ -29,3 +47,67 @@
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+<section>
+    <div class="footer-top-section-2 digi-img">
+        <div class="container">
+            <div class="footer-top-section-wrapper">
+
+                <ul class="slides" aria-label="Important Sites">
+                    <li style="width: 201px; float: left; display: block;">
+                        <a href="" target="_blank" onclick="return confirm('You are being redirected to an external website.');" aria-label="" title="">
+                            <img src="https://cdnbbsr.s3waas.gov.in/s3955cb567b6e38f4c6b3f28cc857fc38c/uploads/bfi_thumb/2019110840-ogkarj0fuvot3qe34kaqro3ehmxrkh3ud8idoq2foo.png" alt="">
+                        </a>
+                    </li>
+                    <li style="width: 200px; float: left; display: block;">
+                        <a href="" target="_blank" aria-label="" title="">
+                            <img src="https://cdnbbsr.s3waas.gov.in/s3955cb567b6e38f4c6b3f28cc857fc38c/uploads/bfi_thumb/2019110867-ogkarkw48jrdqybctl3zwnmboeohzvbb1htcn9znc8.png" alt="My Gov">
+                        </a>
+                    </li>
+                    <li style="width: 200px; float: left; display: block;">
+                        <a href="" target="_blank" aria-label="" title="">
+                            <img src="https://cdnbbsr.s3waas.gov.in/s3955cb567b6e38f4c6b3f28cc857fc38c/uploads/bfi_thumb/2019110850-ogkari2lo1nis4fga1w476bxw92ecs0413uw7g3tuw.png" alt="Prime Minister of India">
+                        </a>
+                    </li>
+                    <li style="width: 200px; float: left; display: block;">
+                        <a href="" target="_blank" aria-label="" title="">
+                            <img src="https://cdnbbsr.s3waas.gov.in/s3955cb567b6e38f4c6b3f28cc857fc38c/uploads/bfi_thumb/2019110890-ogkarjya1pq3fccpz2pdc5uv30t4s67kpd5v6011ig.png" alt="Digital India">
+                        </a>
+                    </li>
+                    <li style="width: 200px; float: left; display: block;">
+                        <a href="" target="_blank" aria-label="" title="">
+                            <img src="https://cdnbbsr.s3waas.gov.in/s3955cb567b6e38f4c6b3f28cc857fc38c/uploads/bfi_thumb/2019110845-ogkarkw48jrdqybctl3zwnmboeohzvbb1htcn9znc8.png" alt="National Portal of India">
+                        </a>
+                    </li>
+                    <li style="width: 200px; float: left; display: block;">
+                        <a href="" target="_blank" aria-label="" title="">
+                            <img src="https://cdnbbsr.s3waas.gov.in/s3955cb567b6e38f4c6b3f28cc857fc38c/uploads/bfi_thumb/2019110821-ogkari2lo1nis4fga1w476bxw92ecs0413uw7g3tuw.png" alt="Incredible India Site">
+                        </a>
+                    </li>
+                    <li style="width: 200px; float: left; display: block;">
+                        <a href="" target="_blank" aria-label="" title="">
+                            <img src="https://cdnbbsr.s3waas.gov.in/s3955cb567b6e38f4c6b3f28cc857fc38c/uploads/bfi_thumb/2019110819-ogkarltyfdso2k9zo3imh5ds9sjv7kf1dmgu4jy960.png" alt="Open Government Data (OGD) Platform India">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    let currentIndex = 0;
+
+    function showSlides() {
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slide').length;
+
+        currentIndex++;
+        if (currentIndex >= totalSlides) {
+            currentIndex = 0;
+        }
+
+        const offset = -currentIndex * 100;
+        slides.style.transform = 'translateX(' + offset + '%)';
+    }
+
+    setInterval(showSlides, 3000); // Change slide every 3 seconds
+</script>

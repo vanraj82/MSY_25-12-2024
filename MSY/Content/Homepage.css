@@ -1,0 +1,204 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, orange, green);
+    padding: 10px 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    width: 170px;
+}
+.logos {
+    width: 150px;
+    height: 40px;
+}
+    .mq {
+        font-size: 20px;
+        color: white;
+        text-decoration: none;
+    }
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+    .nav-links li {
+        margin-left: 20px;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        transition: background-color 0.3s;
+    }
+
+        .nav-links a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+    .menu-toggle .bar {
+        height: 3px;
+        width: 25px;
+        background-color: white;
+        margin: 4px 0;
+    }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%; /* Ensure it doesn't exceed 100% of the parent */
+        min-width: 100px;
+        background-color: #333;
+        position: absolute;
+        top: 60px; /* Adjust based on navbar height */
+        left: 0;
+    }
+
+        .nav-links.active {
+            display: flex;
+        }
+    .marquee {
+        display: none; /* Hide marquee on small screens */
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+.hd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+}
+    .hd p {
+        font-size: 20px;
+        text-align: center;
+        color:green;
+        font-weight:bold;
+    }
+    .hd button {
+        background-color: green;
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+.opt {
+    display: grid;
+    //grid-template-columns: auto auto auto auto auto auto auto auto auto;
+    grid-template-columns: repeat(9, auto);
+    padding: 10px;
+}
+
+    .opt > div {
+        background-color: #f1f1f1;
+        border: 1px solid black;
+        text-align: center;
+    }
+a {
+    text-decoration: none;
+    color:black;
+    font-weight:bold;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: darkgoldenrod;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+        .dropdown-content a:hover {
+            background-color: green;
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.banner {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+.flex-container {
+    display: flex;
+    text-align: center; /* Center text horizontally */
+    align-items: center; /* Center items vertically */
+    color:white;
+}
+
+    .flex-container > div {
+        display: flex; /* Use flexbox for child divs */
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        background: linear-gradient(to right, orange, green);
+        margin: 10px;
+        padding: 20px;
+        font-size: 26px;
+        width: 50%;
+        height: 200px;
+        border-radius: 20px;
+        font-weight: bold;
+    }

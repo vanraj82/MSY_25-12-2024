@@ -1,0 +1,804 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="msyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_demand">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jobcard_no" Type="int" Nullable="false" />
+          <Property Name="demand_no" Type="int" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="adhar_no" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="demand_day" Type="int" Nullable="false" />
+          <Property Name="submissionUserID" Type="varchar" MaxLength="255" />
+          <Property Name="submissionType" Type="varchar" MaxLength="50" />
+          <Property Name="demand_district" Type="varchar" MaxLength="50" />
+          <Property Name="demand_ulb" Type="varchar" MaxLength="50" />
+          <Property Name="demand_ward" Type="int" />
+          <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_districts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="district_code" Type="int" Nullable="false" />
+          <Property Name="district_name_english" Type="varchar" MaxLength="255" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tbl_JobCard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="20" />
+          <Property Name="pincode" Type="int" />
+          <Property Name="ward" Type="int" />
+          <Property Name="ulb" Type="int" />
+          <Property Name="district" Type="int" />
+          <Property Name="urbanResidenceDeclaration" Type="varchar" MaxLength="500" />
+          <Property Name="consent" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="insertTime" Type="datetime" />
+          <Property Name="applicationRefrenceNumber" Type="varchar" MaxLength="500" />
+          <Property Name="approveTime" Type="datetime" />
+          <Property Name="isactive" Type="varchar" MaxLength="50" />
+          <Property Name="jobCardGenerationTime" Type="datetime" />
+          <Property Name="jobCardNumber" Type="varchar" MaxLength="500" />
+          <Property Name="session" Type="varchar" MaxLength="255" />
+          <Property Name="files" Type="varchar" MaxLength="300" />
+          <Property Name="remarks" Type="varchar" MaxLength="255" />
+          <Property Name="type" Type="varchar" MaxLength="10" />
+          <Property Name="jobCard_status" Type="varchar" MaxLength="25" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="OrderBy" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tbl_jobcard_jobcardmember">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jobcard_id" Type="int" Nullable="false" />
+          <Property Name="jobcardmember_id" Type="int" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_jobcardmembers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="500" />
+          <Property Name="dob" Type="varchar" MaxLength="55" />
+          <Property Name="gender" Type="varchar" MaxLength="25" />
+          <Property Name="aadhaar" Type="varchar" MaxLength="500" />
+          <Property Name="mobileNumber" Type="int" />
+          <Property Name="isHeadOfFamily" Type="varchar" MaxLength="50" />
+          <Property Name="relation" Type="varchar" MaxLength="55" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ulb_targets">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ulb_id" Type="int" Nullable="false" />
+          <Property Name="ulb_type" Type="varchar" MaxLength="255" />
+          <Property Name="fresh_target" Type="int" Nullable="false" />
+          <Property Name="cumulative_target" Type="int" />
+          <Property Name="work_fresh_target" Type="int" />
+          <Property Name="work_cumulative_target" Type="int" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ulbs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="district_code" Type="int" Nullable="false" />
+          <Property Name="ulb_name" Type="varchar" MaxLength="255" />
+          <Property Name="ulb_code" Type="int" Nullable="false" />
+          <Property Name="ulb_type" Type="varchar" MaxLength="255" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_wards">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ulb_code" Type="int" Nullable="false" />
+          <Property Name="ward_number" Type="int" Nullable="false" />
+          <Property Name="ward_code" Type="int" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="updated_at" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobCard">
+          <End Role="Tbl_JobCard" Type="Self.Tbl_JobCard" Multiplicity="1" />
+          <End Role="tbl_jobcard_jobcardmember" Type="Self.tbl_jobcard_jobcardmember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_JobCard">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_jobcard_jobcardmember">
+              <PropertyRef Name="jobcard_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobCardMember">
+          <End Role="tbl_jobcardmembers" Type="Self.tbl_jobcardmembers" Multiplicity="1" />
+          <End Role="tbl_jobcard_jobcardmember" Type="Self.tbl_jobcard_jobcardmember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_jobcardmembers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_jobcard_jobcardmember">
+              <PropertyRef Name="jobcardmember_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="msyModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_demand" EntityType="Self.tbl_demand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_districts" EntityType="Self.tbl_districts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_JobCard" EntityType="Self.Tbl_JobCard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_jobcard_jobcardmember" EntityType="Self.tbl_jobcard_jobcardmember" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_jobcardmembers" EntityType="Self.tbl_jobcardmembers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ulb_targets" EntityType="Self.tbl_ulb_targets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ulbs" EntityType="Self.tbl_ulbs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_wards" EntityType="Self.tbl_wards" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobCard" Association="Self.FK_JobCard">
+            <End Role="Tbl_JobCard" EntitySet="Tbl_JobCard" />
+            <End Role="tbl_jobcard_jobcardmember" EntitySet="tbl_jobcard_jobcardmember" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobCardMember" Association="Self.FK_JobCardMember">
+            <End Role="tbl_jobcardmembers" EntitySet="tbl_jobcardmembers" />
+            <End Role="tbl_jobcard_jobcardmember" EntitySet="tbl_jobcard_jobcardmember" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="msyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="msyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="msyModel.C__MigrationHistory" />
+          <EntitySet Name="AspNetRoles" EntityType="msyModel.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="msyModel.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="msyModel.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="msyModel.AspNetUser" />
+          <EntitySet Name="tbl_demand" EntityType="msyModel.tbl_demand" />
+          <EntitySet Name="tbl_districts" EntityType="msyModel.tbl_districts" />
+          <EntitySet Name="Tbl_JobCard" EntityType="msyModel.Tbl_JobCard" />
+          <EntitySet Name="tbl_jobcard_jobcardmember" EntityType="msyModel.tbl_jobcard_jobcardmember" />
+          <EntitySet Name="tbl_jobcardmembers" EntityType="msyModel.tbl_jobcardmembers" />
+          <EntitySet Name="tbl_ulb_targets" EntityType="msyModel.tbl_ulb_targets" />
+          <EntitySet Name="tbl_ulbs" EntityType="msyModel.tbl_ulbs" />
+          <EntitySet Name="tbl_wards" EntityType="msyModel.tbl_wards" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="msyModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaim" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="msyModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobCard" Association="msyModel.FK_JobCard">
+            <End Role="Tbl_JobCard" EntitySet="Tbl_JobCard" />
+            <End Role="tbl_jobcard_jobcardmember" EntitySet="tbl_jobcard_jobcardmember" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobCardMember" Association="msyModel.FK_JobCardMember">
+            <End Role="tbl_jobcardmembers" EntitySet="tbl_jobcardmembers" />
+            <End Role="tbl_jobcard_jobcardmember" EntitySet="tbl_jobcard_jobcardmember" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="msyModel.AspNetUserRoles">
+            <End Role="AspNetRole" EntitySet="AspNetRoles" />
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="msyModel.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="msyModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaim" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="msyModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogin" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="msyModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserClaim" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="msyModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
+          <NavigationProperty Name="AspNetRoles" Relationship="msyModel.AspNetUserRoles" FromRole="AspNetUser" ToRole="AspNetRole" />
+        </EntityType>
+        <EntityType Name="tbl_demand">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jobcard_no" Type="Int32" Nullable="false" />
+          <Property Name="demand_no" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adhar_no" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="demand_day" Type="Int32" Nullable="false" />
+          <Property Name="submissionUserID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="submissionType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="demand_district" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="demand_ulb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="demand_ward" Type="Int32" />
+          <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_districts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="district_code" Type="Int32" Nullable="false" />
+          <Property Name="district_name_english" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Tbl_JobCard">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="pincode" Type="Int32" />
+          <Property Name="ward" Type="Int32" />
+          <Property Name="ulb" Type="Int32" />
+          <Property Name="district" Type="Int32" />
+          <Property Name="urbanResidenceDeclaration" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="consent" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="insertTime" Type="DateTime" Precision="3" />
+          <Property Name="applicationRefrenceNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="approveTime" Type="DateTime" Precision="3" />
+          <Property Name="isactive" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="jobCardGenerationTime" Type="DateTime" Precision="3" />
+          <Property Name="jobCardNumber" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="session" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="files" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="jobCard_status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="OrderBy" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tbl_jobcard_jobcardmember" Relationship="msyModel.FK_JobCard" FromRole="Tbl_JobCard" ToRole="tbl_jobcard_jobcardmember" />
+        </EntityType>
+        <EntityType Name="tbl_jobcard_jobcardmember">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jobcard_id" Type="Int32" Nullable="false" />
+          <Property Name="jobcardmember_id" Type="Int32" Nullable="false" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Tbl_JobCard" Relationship="msyModel.FK_JobCard" FromRole="tbl_jobcard_jobcardmember" ToRole="Tbl_JobCard" />
+          <NavigationProperty Name="tbl_jobcardmembers" Relationship="msyModel.FK_JobCardMember" FromRole="tbl_jobcard_jobcardmember" ToRole="tbl_jobcardmembers" />
+        </EntityType>
+        <EntityType Name="tbl_jobcardmembers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="dob" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="aadhaar" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="mobileNumber" Type="Int32" />
+          <Property Name="isHeadOfFamily" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="relation" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tbl_jobcard_jobcardmember" Relationship="msyModel.FK_JobCardMember" FromRole="tbl_jobcardmembers" ToRole="tbl_jobcard_jobcardmember" />
+        </EntityType>
+        <EntityType Name="tbl_ulb_targets">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ulb_id" Type="Int32" Nullable="false" />
+          <Property Name="ulb_type" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="fresh_target" Type="Int32" Nullable="false" />
+          <Property Name="cumulative_target" Type="Int32" />
+          <Property Name="work_fresh_target" Type="Int32" />
+          <Property Name="work_cumulative_target" Type="Int32" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ulbs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="district_code" Type="Int32" Nullable="false" />
+          <Property Name="ulb_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ulb_code" Type="Int32" Nullable="false" />
+          <Property Name="ulb_type" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_wards">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ulb_code" Type="Int32" Nullable="false" />
+          <Property Name="ward_number" Type="Int32" Nullable="false" />
+          <Property Name="ward_code" Type="Int32" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="updated_at" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Type="msyModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="msyModel.AspNetUserClaim" Role="AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaim">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Type="msyModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="msyModel.AspNetUserLogin" Role="AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogin">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobCard">
+          <End Type="msyModel.Tbl_JobCard" Role="Tbl_JobCard" Multiplicity="1" />
+          <End Type="msyModel.tbl_jobcard_jobcardmember" Role="tbl_jobcard_jobcardmember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_JobCard">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_jobcard_jobcardmember">
+              <PropertyRef Name="jobcard_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobCardMember">
+          <End Type="msyModel.tbl_jobcardmembers" Role="tbl_jobcardmembers" Multiplicity="1" />
+          <End Type="msyModel.tbl_jobcard_jobcardmember" Role="tbl_jobcard_jobcardmember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_jobcardmembers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tbl_jobcard_jobcardmember">
+              <PropertyRef Name="jobcardmember_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Type="msyModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
+          <End Type="msyModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="msyModelStoreContainer" CdmEntityContainer="msyEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="msyModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="msyModel.AspNetRole">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="msyModel.AspNetUserClaim">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="msyModel.AspNetUserLogin">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="msyModel.AspNetUser">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_demand">
+            <EntityTypeMapping TypeName="msyModel.tbl_demand">
+              <MappingFragment StoreEntitySet="tbl_demand">
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="demand_ward" ColumnName="demand_ward" />
+                <ScalarProperty Name="demand_ulb" ColumnName="demand_ulb" />
+                <ScalarProperty Name="demand_district" ColumnName="demand_district" />
+                <ScalarProperty Name="submissionType" ColumnName="submissionType" />
+                <ScalarProperty Name="submissionUserID" ColumnName="submissionUserID" />
+                <ScalarProperty Name="demand_day" ColumnName="demand_day" />
+                <ScalarProperty Name="adhar_no" ColumnName="adhar_no" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="demand_no" ColumnName="demand_no" />
+                <ScalarProperty Name="jobcard_no" ColumnName="jobcard_no" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_districts">
+            <EntityTypeMapping TypeName="msyModel.tbl_districts">
+              <MappingFragment StoreEntitySet="tbl_districts">
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="district_name_english" ColumnName="district_name_english" />
+                <ScalarProperty Name="district_code" ColumnName="district_code" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_JobCard">
+            <EntityTypeMapping TypeName="msyModel.Tbl_JobCard">
+              <MappingFragment StoreEntitySet="Tbl_JobCard">
+                <ScalarProperty Name="OrderBy" ColumnName="OrderBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="jobCard_status" ColumnName="jobCard_status" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="files" ColumnName="files" />
+                <ScalarProperty Name="session" ColumnName="session" />
+                <ScalarProperty Name="jobCardNumber" ColumnName="jobCardNumber" />
+                <ScalarProperty Name="jobCardGenerationTime" ColumnName="jobCardGenerationTime" />
+                <ScalarProperty Name="isactive" ColumnName="isactive" />
+                <ScalarProperty Name="approveTime" ColumnName="approveTime" />
+                <ScalarProperty Name="applicationRefrenceNumber" ColumnName="applicationRefrenceNumber" />
+                <ScalarProperty Name="insertTime" ColumnName="insertTime" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="consent" ColumnName="consent" />
+                <ScalarProperty Name="urbanResidenceDeclaration" ColumnName="urbanResidenceDeclaration" />
+                <ScalarProperty Name="district" ColumnName="district" />
+                <ScalarProperty Name="ulb" ColumnName="ulb" />
+                <ScalarProperty Name="ward" ColumnName="ward" />
+                <ScalarProperty Name="pincode" ColumnName="pincode" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_jobcard_jobcardmember">
+            <EntityTypeMapping TypeName="msyModel.tbl_jobcard_jobcardmember">
+              <MappingFragment StoreEntitySet="tbl_jobcard_jobcardmember">
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="jobcardmember_id" ColumnName="jobcardmember_id" />
+                <ScalarProperty Name="jobcard_id" ColumnName="jobcard_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_jobcardmembers">
+            <EntityTypeMapping TypeName="msyModel.tbl_jobcardmembers">
+              <MappingFragment StoreEntitySet="tbl_jobcardmembers">
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="relation" ColumnName="relation" />
+                <ScalarProperty Name="isHeadOfFamily" ColumnName="isHeadOfFamily" />
+                <ScalarProperty Name="mobileNumber" ColumnName="mobileNumber" />
+                <ScalarProperty Name="aadhaar" ColumnName="aadhaar" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="dob" ColumnName="dob" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ulb_targets">
+            <EntityTypeMapping TypeName="msyModel.tbl_ulb_targets">
+              <MappingFragment StoreEntitySet="tbl_ulb_targets">
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="work_cumulative_target" ColumnName="work_cumulative_target" />
+                <ScalarProperty Name="work_fresh_target" ColumnName="work_fresh_target" />
+                <ScalarProperty Name="cumulative_target" ColumnName="cumulative_target" />
+                <ScalarProperty Name="fresh_target" ColumnName="fresh_target" />
+                <ScalarProperty Name="ulb_type" ColumnName="ulb_type" />
+                <ScalarProperty Name="ulb_id" ColumnName="ulb_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ulbs">
+            <EntityTypeMapping TypeName="msyModel.tbl_ulbs">
+              <MappingFragment StoreEntitySet="tbl_ulbs">
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="ulb_type" ColumnName="ulb_type" />
+                <ScalarProperty Name="ulb_code" ColumnName="ulb_code" />
+                <ScalarProperty Name="ulb_name" ColumnName="ulb_name" />
+                <ScalarProperty Name="district_code" ColumnName="district_code" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_wards">
+            <EntityTypeMapping TypeName="msyModel.tbl_wards">
+              <MappingFragment StoreEntitySet="tbl_wards">
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="ward_code" ColumnName="ward_code" />
+                <ScalarProperty Name="ward_number" ColumnName="ward_number" />
+                <ScalarProperty Name="ulb_code" ColumnName="ulb_code" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="msyModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetUser">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="AspNetRole">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

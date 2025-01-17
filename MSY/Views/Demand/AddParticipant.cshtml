@@ -1,0 +1,75 @@
+﻿@model MSY.Models.Demand
+@using MSY.Manager
+@{
+    ViewBag.Title = "Demand Form";
+    Layout = null;
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-header">
+    <div class="page-block">
+        <div class="page-header-title">
+            <h2 class="mb-0">@ViewBag.Title</h2>
+            <ul class="breadcrumb">
+                @*<li class="breadcrumb-item"><a href="~/Report/RevertCount">Dashboard</a></li>
+                    <li class="breadcrumb-item" aria-current="page">@ViewBag.Title</li>*@
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="grid grid-cols-12 gap-6"></div>
+<div class="col-span-12"></div>
+<div class="card">
+    <div class="card-body">
+        @using (Html.BeginForm("AddParticipant", "Demand", FormMethod.Post, new { @id = "formid", @class = "", role = "form", autocomplete = "off", enctype = "multipart/form-data", noValidate = "novalidate" }))
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="flex-form">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.jobCardNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <span style="color:red;">*</span>
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.jobCardNumber, CommonModel.GetALLJC(), null, new { @class = "form-control-input", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.jobCardNumber, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-form">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.adhar_no, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <span style="color:red;">*</span>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.adhar_no, new { @class = "form-control-input", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.adhar_no, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-form">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.demand_day, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <span style="color:red;">*</span>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.demand_day, new { @class = "form-control-input", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.demand_day, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        }
+
+    </div>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+@*<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>*@
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

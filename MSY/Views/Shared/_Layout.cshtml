@@ -3,42 +3,219 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Mukhyamantri Shramik Yojana</title>
+    @Styles.Render("~/Content/Homepage.css")
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("krishna", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+    @* Start Navebar *@
+    <nav class="navbar">        
+        <img src="~/Storage/images/top_logo.png" alt="My Image" class="logos" />
+        <marquee>
+            <a href="#" class="mq">
+                <i class="fas fa-hand-point-right" aria-hidden="true">
+                </i> Job card application form is live - Apply Now.
+            </a>
+        </marquee>
+        <ul class="nav-links">
+            <li><a href="#home">A+</a></li>
+            <li><a href="#about">A</a></li>
+            <li><a href="#services">A-</a></li>
+            <li><a href="#contact">HN/EN</a></li>
+            <li><a href="#contact">SignIn</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+    @* End Navebar *@
+
+    <div class="hd">
+        <img src="~/Storage/images/logo.jpg" alt="My Image" style="width:6%" />
+        <p>Mukhyamantri SHRAMIK Yojana<br />मुख्यमंत्री श्रमिक योजना</p>
+        <img src="~/Storage/images/top-barlogo.png" alt="My Image" />
+        <button>APPLY FOR JOBCARD</button>
+        <button style="background-color:darkgoldenrod">DEMAND EMPLOYMENT</button>
+    </div>
+    <div class="opt">
+        <div>
+            <a href="~/Home/Index"><i class="fas fa-home" aria-hidden="true"></i>
+            </a>
+</div>
+        <div class="dropdown">
+            <a href="#">
+                <i class="fas fa-address-book" aria-hidden="true"></i> ABOUT MSY <i class="fa fa-angle-down"></i>
+            </a>
+                <div class="dropdown-content">
+                    <a href="#">Who We Are</a>
+                    <a href="#">Meet the CM</a>
+                    <a href="#">Meet the Secretary</a>
+                    <a href="#">Organization Structure</a>
+                    <a href="#">State Directory</a>
+                    <a href="#">Right to Information</a>
+                </div>            
+        </div>
+        <div class="dropdown">
+            <a href="#">
+                <i class="fas fa-user-circle" aria-hidden="true"></i>
+                APPLICATIONS <i class="fa fa-angle-down"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="#">Apply For Job Card</a>
+                <a href="#">Download Job Card</a>
+                <a href="~/Demand/AddParticipant">Demand Employment</a>
+                <a href="#">Print Demand Employment</a>
+                <a href="#">Track Applications</a>
             </div>
         </div>
+        <div>
+            <a href="#"><i class="fas fa-file" aria-hidden="true"></i>Schemes</a>
+        </div>
+        <div class="dropdown">
+            <a href="#">
+                <i class="fas fa-user-circle" aria-hidden="true"></i>KNOWLEDGE BANK
+                <i class="fa fa-angle-down"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="#">SOP</a>
+                <a href="#">SANKALP</a>
+            </div>
+        </div>
+        <div><a href="#">
+             <i class="fas fa-user-circle" aria-hidden="true"></i>MIS REPORT</a>
+        </div>
+        <div class="dropdown">
+            <a href="#">
+                <i class="fas fa-user-circle" aria-hidden="true"></i>ANNOUNCEMENTS
+                <i class="fa fa-angle-down"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="#">News</a>
+                <a href="#">Events</a>
+                <a href="#">Tender</a>
+            </div>
+        </div>
+        <div><a href="#">
+            <i class="fas fa-phone" aria-hidden="true"></i>CONTACT US</a>
+        </div>
+        <div><a href="#">
+            <i class="fas fa-phone" aria-hidden="true"></i>HELPS</a>
+        </div>
     </div>
+
+
     <div class="container body-content">
         @RenderBody()
+
         <hr />
+        
+        @* Start Footer *@
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <div class="footer-main">
+                <div class="container">
+                    <div class="footer-main-wrapper">
+                        <div class="row" style="background-color: #000;">
+                            <div class="col-lg-4 col-sm-6 col-xs-6 footer-section-single">
+                                <div class="footer-educare-widget widget">
+                                    <div class="footer-title-widget">SOCIAL MEDIA</div>
+                                    <div class="footer-content-widget">
+                                        <div class="col ">
+                                            <p>
+                                                <a href="https://www.facebook.com/" class="fb btn">
+                                                    <i class="fa fa-facebook fa-fw"></i> FACEBOOK
+                                                </a>
+                                            </p>
+                                            <p>
+                                                <a a href="https://twitter.com/" class="twitter btn">
+                                                    <i class="fa fa-twitter fa-fw"></i> TWITTER
+                                                </a>
+                                            </p>
+                                            <p>
+                                                <a href="https://www.instagram.com/" class="google btn">
+                                                    <i class="fa fa-instagram fa-fw"></i> INSTAGRAM
+                                                </a>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 col-xs-6 footer-section-single">
+                                <div class="useful-link-widget widget">
+                                    <div class="footer-title-widget">USEFUL LINKS</div>
+                                    <div class="footer-content-widget">
+                                        <div class="useful-link-list">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-sm-6 col-xs-6">
+                                                    <ul class="list-unstyled">
+                                                        <li><i class="fa fa-angle-right"></i><a href="#">HOME</a></li>
+                                                        <li><i class="fa fa-angle-right"></i><a href="#">ABOUT US</a></li>
+                                                        <li><i class="fa fa-angle-right"></i><a href="#">APPLICATION</a></li>
+                                                        <li><i class="fa fa-angle-right"></i><a href="#">GRIEVANCE</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-6 col-xs-6">
+                                                    <ul class="list-unstyled">
+                                                        <li><i class="fa fa-angle-right"></i><a href="#">SCHEMES</a></li>
+                                                        <li><i class="fa fa-angle-right"></i><a href="#">CONTACT US</a></li>
+                                                        <li>
+                                                            <i class="fa fa-angle-right"></i><a href="#">DOWNLOAD JOB CARD</a>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-angle-right"></i><a href="#">TENDER</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 col-xs-6 footer-section-single">
+                                <div class="footer-educare-widget widget">
+                                    <div class="footer-title-widget">CONTACT INFO</div>
+                                    <div class="footer-content-widget">
+                                        <div class="info-list">
+                                            <ul class="list-unstyled">
+                                                <li><i class="fa fa-envelope-o"></i><a href="#">director.ma.goj@gmail.com</a></li>
+                                                <li><i class="fa fa-phone"></i><a href="#">P: </a></li>
+                                                <li>
+                                                    <i class="fa fa-map-marker"></i><a href="#">
+                                                        <p>Directorate, Municipal Administration, </p>
+                                                        <p>Urban Development & Housing Department</p>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="hyperlink">
+
+                        <div class="pull-center text-center">&copy; COPYRIGHT 2022 Mukhyamantri Shramik Yojana</div>
+                    </div>
+                </div>
+            </div>
         </footer>
+        @* End Footer *@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
